@@ -1,0 +1,26 @@
+# fly.toml app configuration file generated for part11-ci-cd-green-darkness-2499 on 2025-10-20T23:03:16-04:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+
+app = "part11-ci-cd-icy-sea-180"
+
+[build]
+
+[env]
+  PORT = "3000"
+
+[processes]
+  app = "node app.js"
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
