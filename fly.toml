@@ -28,7 +28,7 @@ app = "part11-ci-cd-icy-sea-180"
     path = "/health"
 
 [deploy]
-  strategy = "canary"
+  strategy = "rolling"
 
 [[vm]]
   memory = '1gb'
